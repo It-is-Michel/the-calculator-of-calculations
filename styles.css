@@ -26,6 +26,10 @@ body {
   align-items: center;
 }
 
+.header__title {
+  flex-shrink: 1;
+}
+
 .header__links {
   list-style: none;
   display: flex;
