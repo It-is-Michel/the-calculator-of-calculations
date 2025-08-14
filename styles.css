@@ -13,3 +13,10 @@ body {
   --secondary-color: #E9F1F7;
   --accent-color: #9879FF;
 }
+
+/* header */
+
+.header {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+}
