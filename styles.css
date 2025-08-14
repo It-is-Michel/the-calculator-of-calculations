@@ -5,3 +5,11 @@
 body {
   margin: 0;
 }
+
+/* DEFINE WEB PALLETE */
+
+:root {
+  --main-color: #32213A;
+  --secondary-color: #E9F1F7;
+  --accent-color: #9879FF;
+}
