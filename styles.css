@@ -20,4 +20,8 @@ body {
   background-color: var(--main-color);
   color: var(--secondary-color);
   height: 4rem;
+  padding: 0.4rem 15vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
