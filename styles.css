@@ -51,10 +51,15 @@ body {
 .content {
   background-color: var(--secondary-color);
   height: calc(100vh - var(--header-height));
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .calculator {
   background-color: var(--secondary-color);
   border: 0.3rem solid var(--main-color);
   border-radius: 0.5rem;
+  display: inline-flex;
 }
