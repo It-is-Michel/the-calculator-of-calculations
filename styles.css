@@ -61,5 +61,6 @@ body {
   background-color: var(--secondary-color);
   border: 0.3rem solid var(--main-color);
   border-radius: 0.5rem;
+  padding: 0.5rem;
   display: inline-flex;
 }
