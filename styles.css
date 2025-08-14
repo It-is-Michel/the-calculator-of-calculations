@@ -52,3 +52,7 @@ body {
   background-color: var(--secondary-color);
   height: calc(100vh - var(--header-height));
 }
+
+.calculator {
+  background-color: var(--secondary-color);
+}
