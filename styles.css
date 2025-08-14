@@ -13,7 +13,7 @@ body {
   --main-color: #32213A;
   --secondary-color: #E9F1F7;
   --accent-color: #9879FF;
-  
+
   /* LAYOUT VARIABLES */
   --header-height: 4rem;
 }
@@ -44,4 +44,10 @@ body {
 .header__link {
   text-decoration: none;
   color: inherit;
+}
+
+/* content */
+
+.content {
+  background-color: var(--secondary-color);
 }
