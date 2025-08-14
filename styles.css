@@ -19,4 +19,5 @@ body {
 .header {
   background-color: var(--main-color);
   color: var(--secondary-color);
+  height: 4rem;
 }
