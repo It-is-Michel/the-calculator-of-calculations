@@ -34,6 +34,7 @@ body {
   list-style: none;
   display: flex;
   gap: 1.2rem;
+  flex-shrink: 1;
 }
 
 .header__link {
