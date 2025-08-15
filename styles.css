@@ -82,6 +82,7 @@ body {
 }
 
 .calculator__display {
+  font-family: var(--paragraph-font);
   background-color: var(--secondary-color);
   border-radius: 0.5rem;
   height: var(--calculator-display-size);
