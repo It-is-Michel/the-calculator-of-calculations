@@ -63,7 +63,7 @@ body {
   background-color: var(--secondary-color);
   border: 0.3rem solid var(--main-color);
   border-radius: 0.5rem;
-  height: calc(var(--calculator-display-size + --calculator-button-size * 4));
+  height: calc(var(--calculator-display-size) + var(--calculator-button-size) * 4);
   padding: 0.5rem;
   display: inline-flex;
   flex-direction: column;
