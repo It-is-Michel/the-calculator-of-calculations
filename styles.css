@@ -196,4 +196,5 @@ body {
 .footer__credits,
 .footer__message {
   margin: 0;
+  line-height: 1.5;
 }
