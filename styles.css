@@ -18,6 +18,7 @@ body {
   --header-height: 4rem;
   --calculator-display-size: 3rem;
   --calculator-button-size: 3rem;
+  --calculator-buttons-gap: 0.3rem;
 }
 
 /* header */
