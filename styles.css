@@ -60,6 +60,8 @@ body {
   align-items: center;
 }
 
+/* content > calculator */
+
 .calculator {
   background-color: var(--secondary-color);
   border: 0.3rem solid var(--main-color);
@@ -138,4 +140,9 @@ body {
   height: calc(var(--calculator-button-size) * 2 + var(--calculator-buttons-gap));
   width: var(--calculator-button-size);
   aspect-ratio: unset;
+}
+
+.calculator__button--clear-entry,
+.calculator__button--clear-all {
+  background-color: red;
 }
