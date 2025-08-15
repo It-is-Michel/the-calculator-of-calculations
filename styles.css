@@ -127,3 +127,9 @@ body {
   height: var(--calculator-button-size);
   aspect-ratio: 1 / 1;
 }
+
+.calculator__button--longer {
+  width: calc(var(--calculator-button-size) * 2 + var(--calculator-buttons-gap));
+  height: var(--calculator-button-size);
+  aspect-ratio: unset;
+}
