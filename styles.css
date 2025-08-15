@@ -188,13 +188,13 @@ body {
   padding: 0 1rem;
 }
 
+.footer__message
+.footer__credits {
+  margin: 0;
+  line-height: 1.5;
+}
+
 .footer__credits {
   font-size: 0.8rem;
   text-align: center;
-}
-
-.footer__credits,
-.footer__message {
-  margin: 0;
-  line-height: 1.5;
 }
