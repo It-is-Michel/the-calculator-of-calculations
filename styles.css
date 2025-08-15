@@ -136,6 +136,11 @@ body {
 }
 
 .calculator__button {
+  font-family: var(--calculator-font);
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 1.85;
+  color: var(--main-color);
   border: 1px solid var(--main-color);
   border-radius: 0.5rem;
   height: var(--calculator-button-size);
