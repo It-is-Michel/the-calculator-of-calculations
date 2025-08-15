@@ -72,4 +72,5 @@ body {
 
 .calculator__buttons-list {
   list-style: none;
+  padding: 0;
 }
