@@ -84,6 +84,7 @@ body {
 .calculator__control-buttons {
   width: calc(var(--calculator-button-size) * 2);
   height: calc(var(--calculator-button-size) * 1);
+  display:flex;
 }
 
 .calculator__operator-buttons {
