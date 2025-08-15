@@ -144,5 +144,5 @@ body {
 
 .calculator__button--clear-entry,
 .calculator__button--clear-all {
-  background-color: red;
+  background-color: #EF233C;
 }
