@@ -155,6 +155,7 @@ body {
 
 .calculator__button--clear-entry,
 .calculator__button--clear-all {
+  color: var(--secondary-color);
   background-color: #EF233C;
 }
 
