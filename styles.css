@@ -69,6 +69,7 @@ body {
   display: inline-flex;
   flex-direction: column;
   align-items: stretch;
+  gap: 0.5rem;
 }
 
 .calculator__buttons-list {
