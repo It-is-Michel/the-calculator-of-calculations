@@ -69,3 +69,7 @@ body {
   flex-direction: column;
   align-items: stretch;
 }
+
+.calculator__buttons-list {
+  list-style: none;
+}
