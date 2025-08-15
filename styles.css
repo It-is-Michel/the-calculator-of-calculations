@@ -16,6 +16,7 @@ body {
 
   /* LAYOUT VARIABLES */
   --header-height: 4rem;
+  --calculator-button-size: 3rem;
 }
 
 /* header */
