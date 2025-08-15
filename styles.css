@@ -179,3 +179,9 @@ body {
 .calculator__button--equal {
   background-color: #ffd65c;
 }
+
+/* footer */
+
+.footer {
+  height: var(--footer-height);
+}
