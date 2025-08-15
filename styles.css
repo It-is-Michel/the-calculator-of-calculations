@@ -70,7 +70,7 @@ body {
 /* content > calculator */
 
 .calculator {
-  background-color: var(--secondary-color);
+  background-color: var(--main-color);
   border: 0.3rem solid var(--main-color);
   border-radius: 0.5rem;
   max-height: max-content;
