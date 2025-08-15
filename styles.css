@@ -118,4 +118,7 @@ body {
 .calculator__operator-buttons {
   width: calc(var(--calculator-button-size) * 2 + var(--calculator-buttons-gap) * 1);
   height: calc(var(--calculator-button-size) * 3 + var(--calculator-buttons-gap) * 2);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
