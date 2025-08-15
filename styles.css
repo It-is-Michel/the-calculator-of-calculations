@@ -75,3 +75,18 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.calculator__number-buttons {
+  width: calc(var(--calculator-button-size) * 4);
+  height: calc(var(--calculator-button-size) * 4);
+}
+
+.calculator__control-buttons {
+  width: calc(var(--calculator-button-size) * 2);
+  height: calc(var(--calculator-button-size) * 1);
+}
+
+.calculator__operator-buttons {
+  width: calc(var(--calculator-button-size) * 2);
+  height: calc(var(--calculator-button-size) * 3);
+}
