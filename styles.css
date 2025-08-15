@@ -187,3 +187,7 @@ body {
   height: var(--footer-height);
   padding: 0 1rem;
 }
+
+.footer__credits {
+  font-size: 0.8rem;
+}
