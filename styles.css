@@ -88,6 +88,7 @@ body {
   flex-wrap: wrap;
   gap: var(--calculator-buttons-gap);
 }
+
 .calculator__buttons-list {
   list-style: none;
   margin: 0;
