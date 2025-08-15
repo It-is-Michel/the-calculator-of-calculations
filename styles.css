@@ -133,3 +133,9 @@ body {
   height: var(--calculator-button-size);
   aspect-ratio: unset;
 }
+
+.calculator__button--taller {
+  height: calc(var(--calculator-button-size) * 2 + var(--calculator-buttons-gap));
+  width: var(--calculator-button-size);
+  aspect-ratio: unset;
+}
