@@ -122,3 +122,8 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
 }
+
+.calculator__button {
+  height: var(--calculator-button-size);
+  aspect-ratio: 1 / 1;
+}
