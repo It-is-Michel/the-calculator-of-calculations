@@ -80,6 +80,10 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.calculator__buttons {
+  height: calc(var(--calculator-button-size) * 4 + var(--calculator-buttons-gap) * 3);
+}
 .calculator__buttons-list {
   list-style: none;
   margin: 0;
