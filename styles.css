@@ -192,3 +192,8 @@ body {
   font-size: 0.8rem;
   text-align: center;
 }
+
+.footer__credits,
+.footer__message {
+  margin: 0;
+}
