@@ -82,7 +82,6 @@ body {
 }
 
 .calculator__display {
-  border: 0.3rem solid var(--main-color);
   border-radius: 0.5rem;
   height: var(--calculator-display-size);
   display: flex;
