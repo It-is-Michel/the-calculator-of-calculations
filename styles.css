@@ -76,6 +76,9 @@ body {
   border: 0.3rem solid var(--main-color);
   border-radius: 0.5rem;
   height: var(--calculator-display-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .calculator__buttons-list {
   list-style: none;
