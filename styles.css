@@ -102,17 +102,17 @@ body {
 }
 
 .calculator__number-buttons {
-  width: calc(var(--calculator-button-size) * 4);
-  height: calc(var(--calculator-button-size) * 4);
+  width: calc(var(--calculator-button-size) * 3 + var(--calculator-buttons-gap) * 2);
+  height: calc(var(--calculator-button-size) * 4 + var(--calculator-buttons-gap) * 3);
 }
 
 .calculator__control-buttons {
-  width: calc(var(--calculator-button-size) * 2);
+  width: calc(var(--calculator-button-size) * 2 + var(--calculator-buttons-gap) * 1);
   height: calc(var(--calculator-button-size) * 1);
   display:flex;
 }
 
 .calculator__operator-buttons {
-  width: calc(var(--calculator-button-size) * 2);
-  height: calc(var(--calculator-button-size) * 3);
+  width: calc(var(--calculator-button-size) * 2 + var(--calculator-buttons-gap) * 1);
+  height: calc(var(--calculator-button-size) * 3 + var(--calculator-buttons-gap) * 2);
 }
