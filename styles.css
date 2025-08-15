@@ -77,6 +77,12 @@ body {
   padding: 0;
 }
 
+.calculator__number-buttons,
+.calculator__control-buttons,
+.calculator__operator-buttons {
+  gap: var(--calculator-buttons-gap);
+}
+
 .calculator__number-buttons {
   width: calc(var(--calculator-button-size) * 4);
   height: calc(var(--calculator-button-size) * 4);
