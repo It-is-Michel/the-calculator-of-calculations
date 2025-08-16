@@ -18,17 +18,8 @@ function Calculator(displayNode = "not set") {
     // Compare pressed button with operands and control buttons, then do the action
     switch(pressedButton) {
       case "+":
-        this.sum(pressedButton);
-        return;
-
       case "-":
-        this.sub(pressedButton);
-        return;
-
       case "x":
-        this.multi(pressedButton);
-        return;
-
       case "/":
         this.updateOperator(pressedButton);
         return;
