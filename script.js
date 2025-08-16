@@ -68,6 +68,7 @@ function Calculator() {
       default:
         currentEntryIsZero = (this.currentEntry === "0");
         this.currentEntry = currentEntryIsZero ? value : this.currentEntry + value;
+        break;
     }
   }
 
