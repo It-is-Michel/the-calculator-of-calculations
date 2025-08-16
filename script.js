@@ -139,7 +139,13 @@ function Calculator(displayNode = "not set") {
     };
     return currentInputType;
   };
-  // add method
+
+  this.updateOperator = function(newOperator) {
+    this.previousEntry = this.currentEntry;
+    this.currentEntry = "0";
+    this.operator = newOperator;
+    this.updateDisplay();
+  }
   // subtract method
   // multiply method
   // divide method
