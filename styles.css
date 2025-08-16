@@ -189,6 +189,8 @@ body {
 
 .footer {
   background-color: var(--secondary-color);
+  font-family: var(--paragraph-font);
+  font-size: 0.9rem;
   color: var(--main-color);
   height: var(--footer-height);
   padding: 0 1rem;
@@ -204,6 +206,8 @@ body {
 }
 
 .footer__credits {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-align: center;
+  position: relative;
+  top: -0.5rem;
 }
