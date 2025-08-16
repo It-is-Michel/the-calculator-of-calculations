@@ -74,7 +74,7 @@ function Calculator(displayNode = "not set") {
   }
 
   // Update display text
-  this.displayText = "Welcome!";
+  this.displayText = "0";
   this.displayNode = displayNode;
   this.updateDisplay = function() {
     // Find what was last input
