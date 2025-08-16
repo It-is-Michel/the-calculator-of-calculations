@@ -50,7 +50,7 @@ function Calculator(displayNode = "not set") {
         console.warn(`${pressedButton} isn't a valid input.`);
         return;
     };
-  }
+  };
 
   // Add digits and dots to the current entry
   this.addToEntry = function(value) {
@@ -70,9 +70,9 @@ function Calculator(displayNode = "not set") {
         currentEntryIsZero = (this.currentEntry === "0");
         this.currentEntry = currentEntryIsZero ? value : this.currentEntry + value;
         break;
-    }
+    };
     this.updateDisplay();
-  }
+  };
 
   // Update display text
   this.displayText = "0";
@@ -93,7 +93,7 @@ function Calculator(displayNode = "not set") {
       this.displayText = "There was an error.";
       console.warn(`Error: updateDisplay couldn't find the last input with ${this.currentEntry}.`);
       return;
-    }
+    };
 
     // Decide what to display based on last input
     switch(lastInput) {
@@ -112,7 +112,7 @@ function Calculator(displayNode = "not set") {
         this.displayNode.style["justify-content"] = "center";
         this.displayText = this.currentEntry;
         break;
-    }
+    };
 
     // Update display text on the HTML if there are one
     if (this.displayNode !== "not set") {
