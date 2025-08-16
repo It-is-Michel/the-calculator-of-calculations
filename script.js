@@ -22,7 +22,7 @@ function Calculator(displayNode = "not set") {
         return;
 
       case "-":
-        this.sum(pressedButton);
+        this.sub(pressedButton);
         return;
 
       case "x":
