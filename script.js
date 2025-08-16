@@ -113,16 +113,17 @@ function Calculator(displayNode = "not set") {
   this.getCurrentInputType = function() {
     const operatorsRegex = /[\+\-x/]/;
 
-    const isNumber = !isNaN(this.currentEntry);
-    const isDot = /\.$/.test(this.currentEntry);
-    const isOperator = operatorsRegex.test(this.currentEntry);
-    const isError = /^Error: /.test(this.currentEntry);
+    const CurrentInputIsNumber = !isNaN(this.currentEntry);
+    const CurrentInputIsZero = this.currentEntry === "0";
+    const CurrentInputIsDot = /\.$/.test(this.currentEntry);
+    const isThereOperator = operatorsRegex.test(this.operator);
+    const currentInputIsError = /^Error: /.test(this.currentEntry);
 
-    if (isNumber || isDot) {
-      return "number";
-    } else if (isOperator) {
+    if (isThereOperator && CurrentInputIsZero) {
       return "operator";
-    } else if (isError) {
+    } else if (CurrentInputIsNumber || CurrentInputIsDot) {
+      return "number";
+    } else if (currentInputIsError) {
       return "error";
     } else {
       console.warn(`getCurrentInputType didn't work with: ${this.currentEntry}`);
