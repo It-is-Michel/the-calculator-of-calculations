@@ -152,11 +152,19 @@ const calculatorNode = document.querySelector(".calculator");
 const calculatorDisplay = document.querySelector(".calculator__display");
 const calculator = new Calculator();
 
-  calculatorNode.addEventListener("click", (event) => {
-    const targetIsCalculatorButton = event.target.classList.contains("calculator__button");
-    if (!targetIsCalculatorButton) return;
+calculatorNode.addEventListener("click", (event) => {
+  const targetIsCalculatorButton = event.target.classList.contains("calculator__button");
+  if (!targetIsCalculatorButton) return;
 
-    calculator.pressButton(event.target.textContent);
-    calculatorDisplay.textContent = calculator.displayText;
-    calculatorDisplay.style.color = /Error/.test(calculatorDisplay.textContent) ? "var(--accent-color)" : "var(--main-color)";
-  });
+  calculator.pressButton(event.target.textContent);
+  calculatorDisplay.textContent = calculator.displayText;
+
+  if (/Error/.test(calculatorDisplay.textContent)) {
+    calculatorDisplay.style.color = "var(--accent-color)";
+    calculatorDisplay.style.justifyContent = "center";
+  } else {
+    calculatorDisplay.style.color = "var(--main-color)";
+    calculatorDisplay.style.justifyContent = "flex-end";
+  }
+  
+});
