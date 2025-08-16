@@ -70,6 +70,7 @@ function Calculator() {
         this.currentEntry = currentEntryIsZero ? value : this.currentEntry + value;
         break;
     }
+    this.updateDisplay();
   }
 
   // add method
