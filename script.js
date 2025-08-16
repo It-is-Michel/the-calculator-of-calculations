@@ -72,7 +72,7 @@ function Calculator(displayNode = "not set") {
     this.updateDisplay();
   }
 
-  this.clearEntry = function () {
+  this.clearEntry = function() {
     const operatorsRegex = /[\+\-x/]/;
     if (!operatorsRegex.test(this.operator)) {
       this.currentEntry = "0";
@@ -85,6 +85,13 @@ function Calculator(displayNode = "not set") {
     };
     this.updateDisplay();
   };
+
+  this.clearAll = function() {
+    this.currentEntry = "0";
+    this.operator = null;
+    this.previousEntry = null;
+    this.updateDisplay();
+  }
 
   // Update display text
   this.displayText = "0";
