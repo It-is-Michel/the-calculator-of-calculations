@@ -4,6 +4,8 @@ function Calculator() {
   this.memory = [];
   this.lastEntry = "0";
   this.currentEntry = "0";
+  this.thereWasAnError = false;
+  this.errorMessage = "";
 
   this.pressButton = function(button) {
     const isNumber = !isNaN(button);
@@ -32,7 +34,11 @@ function Calculator() {
       return;
     };
 
-    this.updateDisplay();
+    if (this.thereWasAnError) {
+      this.displayError()
+    } else {
+      this.updateDisplay();
+    };
   };
 
   this.saveEntry = function() {
@@ -47,6 +53,16 @@ function Calculator() {
 
   this.displayText = "";
   this.updateDisplay = () => {this.displayText = this.currentEntry};
+
+  this.displayError = () => {
+    this.displayText = this.errorMessage;
+    this.thereWasAnError = false;
+  };
+
+  this.raiseError = function(errorMessage) {
+    this.thereWasAnError = true;
+    this.errorMessage = errorMessage;
+  }
 
   this.addNumberToEntry = function(value) {
     if (operatorsRegex.test(this.currentEntry)) this.saveEntry();
@@ -87,48 +103,60 @@ function Calculator() {
   };
 
   this.calculate = function() {
-    const currentEntryIsOperator = operatorsRegex.test(this.currentEntry)
+    const currentEntryIsOperator = operatorsRegex.test(this.currentEntry);
+    const lastEntryIsOperator = operatorsRegex.test(this.lastEntry);
+    if (!currentEntryIsOperator && lastEntryIsOperator) this.saveEntry();
 
-    if (!currentEntryIsOperator) this.saveEntry();
+    const isThereTwoOperands = this.memory.length >= 3;
+    if (!isThereTwoOperands) return;
 
     let answer = null;
     for (let calcIndex = 0; calcIndex < this.memory.length; calcIndex += 2) {
-      let firstOperant = answer !== null ? answer : Number(this.memory[calcIndex]);
+      let firstOperand = answer !== null ? answer : Number(this.memory[calcIndex]);
       let operator = this.memory[calcIndex + 1];
-      let secondOperant = Number(this.memory[calcIndex + 2]);
+      let secondOperand = Number(this.memory[calcIndex + 2]);
 
       switch(operator){
         case "+":
-          answer = firstOperant + secondOperant;
+          answer = firstOperand + secondOperand;
           break
         
         case "-":
-          answer = firstOperant - secondOperant;
+          answer = firstOperand - secondOperand;
           break;
 
         case "x":
-          answer = firstOperant * secondOperant;
+          answer = firstOperand * secondOperand;
           break;
 
         case "/":
-          answer = firstOperant / secondOperant;
+          if (firstOperand === 0) {this.raiseError("Error: division by zero!")};
+
+          answer = firstOperand / secondOperand;
           break;
       };
     };
+
     this.clearAll();
+
+    if (answer === null) {
+      this.raiseError("Error: unexpected error")
+    };
+
     this.currentEntry = String(answer);
   };
 };
 
 // Create calculator
+const calculatorNode = document.querySelector(".calculator");
 const calculatorDisplay = document.querySelector(".calculator__display");
 const calculator = new Calculator();
 
-// Add events to calculator buttons to call the calculator pressButton method
-const calculatorButtons = document.querySelectorAll(".calculator__button");
-for (let button of calculatorButtons) {             // OPTIMIZE USING BUBBLING
-  button.addEventListener("click", (event) => {
+  calculatorNode.addEventListener("click", (event) => {
+    const targetIsCalculatorButton = event.target.classList.contains("calculator__button");
+    if (!targetIsCalculatorButton) return;
+
     calculator.pressButton(event.target.textContent);
     calculatorDisplay.textContent = calculator.displayText;
-  })
-}
+    calculatorDisplay.style.color = /Error/.test(calculatorDisplay.textContent) ? "var(--accent-color)" : "var(--main-color)";
+  });
