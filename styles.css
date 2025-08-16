@@ -186,6 +186,9 @@ body {
   background-color: var(--secondary-color);
   height: var(--footer-height);
   padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .footer__message,
