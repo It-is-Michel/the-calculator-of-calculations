@@ -78,7 +78,7 @@ function Calculator(displayNode = "not set") {
   this.displayNode = displayNode;
   this.updateDisplay = function() {
     // Find what was last input
-    const lastInput = "not set";
+    let lastInput = "not set";
     const operatorsRegex = /[+-x\/]/;
     if (this.currentEntry !== "0") {
       lastInput = "number";
