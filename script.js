@@ -98,12 +98,18 @@ function Calculator(displayNode = "not set") {
     switch(lastInput) {
       case "number":
       case "invalid input":
-      case "error":
+        this.displayNode.style["justify-content"] = "flex-end";
         this.displayText = this.currentEntry;
         break;
 
       case "operator":
+        this.displayNode.style["justify-content"] = "flex-end";
         this.displayText = this.operator;
+        break;
+
+      case "error":
+        this.displayNode.style["justify-content"] = "center";
+        this.displayText = this.currentEntry;
         break;
     }
 
