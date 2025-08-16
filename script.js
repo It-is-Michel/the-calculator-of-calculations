@@ -116,7 +116,7 @@ function Calculator(displayNode = "not set") {
     const isNumber = !isNaN(this.currentEntry);
     const isDot = /\.$/.test(this.currentEntry);
     const isOperator = operatorsRegex.test(this.currentEntry);
-    const isError = this.currentEntry.includes(/^Error: /);
+    const isError = /^Error: /.test(this.currentEntry);
 
     if (isNumber || isDot) {
       return "number";
