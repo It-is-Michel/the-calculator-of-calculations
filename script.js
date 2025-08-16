@@ -78,22 +78,7 @@ function Calculator(displayNode = "not set") {
   this.displayText = "0";
   this.displayNode = displayNode;
   this.updateDisplay = function() {
-    // Find what was last input
-    let lastInput = "not set";
-    const operatorsRegex = /[\+\-x/]/;
-    if (this.currentEntry !== "0") {
-      lastInput = "number";
-    } else if (operatorsRegex.test(this.currentEntry)) {
-      lastInput = "operator";
-    } else if (this.currentEntry === this.displayText) {
-      lastInput = "invalid input";
-    } else if (this.currentEntry.contains("Error: ")) {
-      lastInput = "error";
-    } else {
-      this.displayText = "There was an error.";
-      console.warn(`Error: updateDisplay couldn't find the last input with ${this.currentEntry}.`);
-      return;
-    };
+    const lastInput = this.getLastInput();
 
     // Decide what to display based on last input
     switch(lastInput) {
@@ -120,6 +105,24 @@ function Calculator(displayNode = "not set") {
     };
   };
 
+  // Find what was last input
+  this.getLastInput = function() {
+    let lastInput = "not set";
+    const operatorsRegex = /[\+\-x/]/;
+    if (this.currentEntry !== "0") {
+      lastInput = "number";
+    } else if (operatorsRegex.test(this.currentEntry)) {
+      lastInput = "operator";
+    } else if (this.currentEntry === this.displayText) {
+      lastInput = "invalid input";
+    } else if (this.currentEntry.contains("Error: ")) {
+      lastInput = "error";
+    } else {
+      this.displayText = "There was an error.";
+      console.warn(`Error: updateDisplay couldn't find the last input with ${this.currentEntry}.`);
+    };
+    return lastInput;
+  };
   // add method
   // subtract method
   // multiply method
