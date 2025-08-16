@@ -115,8 +115,10 @@ function Calculator(displayNode = "not set") {
       currentInputType = "operator";
     } else if (this.currentEntry === this.displayText) {
       currentInputType = "invalid input";
-    } else if (this.currentEntry.contains("Error: ")) {
+    } else if (this.currentEntry.includes("Error: ")) {
       currentInputType = "error";
+    } else if (this.currentEntry === "0") {
+      currentInputType = "number";
     } else {
       this.displayText = "There was an error.";
       console.warn(`Error: updateDisplay couldn't find the last input with ${this.currentEntry}.`);
