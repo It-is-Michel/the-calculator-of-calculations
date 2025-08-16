@@ -99,7 +99,7 @@ function Calculator(displayNode = "not set") {
       case "number":
       case "invalid input":
       case "error":
-        this.displayText = currentEntry;
+        this.displayText = this.currentEntry;
         break;
 
       case "operator":
