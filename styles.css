@@ -144,7 +144,7 @@ body {
   text-align: center;
   line-height: 1.85;
   color: var(--main-color);
-  border: 1px solid var(--main-color);
+  border: 2px outset var(--main-color);
   border-radius: 0.5rem;
   height: var(--calculator-button-size);
   aspect-ratio: 1 / 1;
@@ -152,6 +152,10 @@ body {
 
 .calculator__button:hover {
   filter: brightness(95%);
+}
+
+.calculator__button:active {
+  border-style: inset;
 }
 
 .calculator__button--longer {
