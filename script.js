@@ -85,9 +85,9 @@ function Calculator() {
   };
 
   this.addOperatorToEntry = function(operator) {
-    const currentEntryIsOperator = operatorsRegex.test(this.currentEntry)
+    const currentEntryIsNumber = !isNaN(this.currentEntry)
 
-    if (!currentEntryIsOperator) this.saveEntry();
+    if (currentEntryIsNumber) this.saveEntry();
 
     this.currentEntry = operator;
   };
@@ -111,7 +111,7 @@ function Calculator() {
     if (!isThereTwoOperands) return;
 
     let answer = null;
-    for (let calcIndex = 0; calcIndex < this.memory.length; calcIndex += 2) {
+    for (let calcIndex = 0; calcIndex < this.memory.length - 1; calcIndex += 2) {
       let firstOperand = answer !== null ? answer : Number(this.memory[calcIndex]);
       let operator = this.memory[calcIndex + 1];
       let secondOperand = Number(this.memory[calcIndex + 2]);
