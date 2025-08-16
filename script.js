@@ -88,7 +88,6 @@ function Calculator(displayNode = "not set") {
     // Decide what to display based on last input
     switch(currentInputType) {
       case "number":
-      case "invalid input":
         this.displayNode.style["justify-content"] = "flex-end";
         this.displayText = this.currentEntry;
         break;
