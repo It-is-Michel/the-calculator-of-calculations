@@ -93,11 +93,7 @@ function Calculator() {
 
     if (currentEntryIsNumber) this.saveEntry();
 
-    if (this.currentEntry === "x") {
-      this.currentEntry = "^";
-    } else {
     this.currentEntry = operator;
-    };
   };
 
   this.clearEntry = function() {
@@ -164,6 +160,8 @@ const calculatorNode = document.querySelector(".calculator");
 const calculatorDisplay = document.querySelector(".calculator__display");
 const calculator = new Calculator();
 
+const xButton = document.querySelector(".calculator__button--multiply");
+
 calculatorNode.addEventListener("click", (event) => {
   const targetIsCalculatorButton = event.target.classList.contains("calculator__button");
   if (!targetIsCalculatorButton) return;
@@ -189,5 +187,13 @@ calculatorNode.addEventListener("click", (event) => {
     calculatorDisplay.style.fontSize = "1.09rem";
   } else {
     calculatorDisplay.style.fontSize = "1.04rem";
+  }
+
+  if (event.target.textContent === "x") {
+    event.target.textContent = "^";
+    xButton.style.lineHeight = "2.28";
+  } else {
+    xButton.textContent = "x";
+    xButton.style.lineHeight = "1.85";
   }
 });
