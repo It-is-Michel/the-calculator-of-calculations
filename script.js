@@ -45,7 +45,7 @@ function Calculator() {
         return;
 
       default:
-        // If any of the buttons possibilities match, there's an error. Then, warn and return.
+        // If any of the button possibilities match, there's an error. Then, warn and return.
         console.warn(`${pressedButton} isn't a valid input.`);
         return;
     };
