@@ -73,6 +73,20 @@ function Calculator(displayNode = "not set") {
     };
     this.updateDisplay();
   };
+  
+  this.clearEntry = function () {
+    const operatorsRegex = /[\+\-x/]/;
+    if (!operatorsRegex.test(this.operator)) {
+      this.currentEntry = "0";
+    } else if (operatorsRegex.test(this.operator) && !this.currentEntry === "0") {
+      this.currentEntry = this.previousEntry;
+      this.previousEntry = "0";
+      this.operator = null;
+    } else {
+      this.currentEntry = "0";
+    };
+    this.updateDisplay();
+  };
 
   // Update display text
   this.displayText = "0";
