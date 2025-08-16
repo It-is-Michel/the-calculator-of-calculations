@@ -52,6 +52,24 @@ function Calculator() {
   }
 
   // Add digits and dots to the current entry
+  this.addToEntry = function(value) {
+    let currentEntryIsZero;
+    switch(value) {
+      case "0":
+        currentEntryIsZero = (this.currentEntry === "0");
+        this.currentEntry = currentEntryIsZero ? "0" : this.currentEntry + value;
+        break;
+
+      case ".":
+        const currentEntryHasADot = this.currentEntry.includes(".");
+        this.currentEntry = currentEntryHasADot ? this.currentEntry : this.currentEntry + ".";
+        break;
+
+      default:
+        currentEntryIsZero = (this.currentEntry === "0");
+        this.currentEntry = currentEntryIsZero ? value : this.currentEntry + value;
+    }
+  }
 
   // add method
   // subtract method
