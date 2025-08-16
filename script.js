@@ -65,6 +65,8 @@ function Calculator() {
   }
 
   this.addNumberToEntry = function(value) {
+    if (this.currentEntry.length >= 23) return;
+
     if (operatorsRegex.test(this.currentEntry)) this.saveEntry();
 
     if (this.currentEntry === "0" && value === "0") {
@@ -78,6 +80,8 @@ function Calculator() {
   };
 
   this.addDotToEntry = function() {
+    if (this.currentEntry.length >= 23) return;
+
     const currentEntryHasDot = this.currentEntry.includes(".");
     const currentEntryIsOperator = operatorsRegex.test(this.currentEntry);
 
@@ -174,5 +178,16 @@ calculatorNode.addEventListener("click", (event) => {
     calculatorDisplay.style.color = "var(--main-color)";
     calculatorDisplay.style.justifyContent = "flex-end";
   }
-  
+
+  const displayTextLength = calculator.displayText.length;
+
+  if (displayTextLength <= 20) {
+    calculatorDisplay.style.fontSize = "1.2rem";
+  } else if (displayTextLength <= 21) {
+    calculatorDisplay.style.fontSize = "1.14rem";
+  } else if (displayTextLength <= 22) {
+    calculatorDisplay.style.fontSize = "1.09rem";
+  } else {
+    calculatorDisplay.style.fontSize = "1.04rem";
+  }
 });
