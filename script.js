@@ -16,31 +16,31 @@ function Calculator(displayNode = "not set") {
 
     // Compare pressed button with operands and control buttons, then do the action
     switch(pressedButton) {
-      case "sum":
+      case "+":
         this.sum(pressedButton);
         return;
 
-      case "sub":
+      case "-":
         this.sum(pressedButton);
         return;
 
-      case "multi":
+      case "x":
         this.multi(pressedButton);
         return;
 
-      case "div":
+      case "/":
         this.div(pressedButton);
         return;
 
-      case "clear entry":
+      case "ce":
         this.clearEntry();
         return;
 
-      case "clear all":
+      case "ca":
         this.clearAll();
         return;
 
-      case "equal":
+      case "=":
         this.calculateResult(pressedButton);
         return;
 
