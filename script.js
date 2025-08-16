@@ -129,3 +129,15 @@ function Calculator(displayNode = "not set") {
   // clear entry method
   // clear all method
 }
+
+// Create calculator
+const calculatorDisplay = document.querySelector(".calculator__display");
+const calculator = new Calculator(calculatorDisplay);
+
+// Add events to calculator buttons to call the calculator pressButton method
+const calculatorButtons = document.querySelectorAll(".calculator__button");
+for (let button of calculatorButtons) {
+  button.addEventListener("click", (event) => {
+    calculator.pressButton(event.target.textContent);
+  })
+}
