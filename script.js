@@ -64,7 +64,14 @@ function Calculator(displayNode = "not set") {
     };
     this.updateDisplay();
   };
-  
+
+  this.updateOperator = function(newOperator) {
+    this.previousEntry = this.currentEntry;
+    this.currentEntry = "0";
+    this.operator = newOperator;
+    this.updateDisplay();
+  }
+
   this.clearEntry = function () {
     const operatorsRegex = /[\+\-x/]/;
     if (!operatorsRegex.test(this.operator)) {
@@ -130,12 +137,6 @@ function Calculator(displayNode = "not set") {
     };
   };
 
-  this.updateOperator = function(newOperator) {
-    this.previousEntry = this.currentEntry;
-    this.currentEntry = "0";
-    this.operator = newOperator;
-    this.updateDisplay();
-  }
   // subtract method
   // multiply method
   // divide method
