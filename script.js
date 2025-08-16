@@ -78,10 +78,10 @@ function Calculator(displayNode = "not set") {
   this.displayText = "0";
   this.displayNode = displayNode;
   this.updateDisplay = function() {
-    const lastInput = this.getLastInput();
+    const currentInputType = this.getLastInput();
 
     // Decide what to display based on last input
-    switch(lastInput) {
+    switch(currentInputType) {
       case "number":
       case "invalid input":
         this.displayNode.style["justify-content"] = "flex-end";
@@ -106,22 +106,22 @@ function Calculator(displayNode = "not set") {
   };
 
   // Find what was last input
-  this.getLastInput = function() {
-    let lastInput = "not set";
+  this.getCurrentInputType = function() {
+    let currentInputType = "not set";
     const operatorsRegex = /[\+\-x/]/;
     if (this.currentEntry !== "0") {
-      lastInput = "number";
+      currentInputType = "number";
     } else if (operatorsRegex.test(this.currentEntry)) {
-      lastInput = "operator";
+      currentInputType = "operator";
     } else if (this.currentEntry === this.displayText) {
-      lastInput = "invalid input";
+      currentInputType = "invalid input";
     } else if (this.currentEntry.contains("Error: ")) {
-      lastInput = "error";
+      currentInputType = "error";
     } else {
       this.displayText = "There was an error.";
       console.warn(`Error: updateDisplay couldn't find the last input with ${this.currentEntry}.`);
     };
-    return lastInput;
+    return currentInputType;
   };
   // add method
   // subtract method
