@@ -156,6 +156,7 @@ body {
 
 .calculator__button:active {
   border-style: inset;
+  line-height: 1.95;
 }
 
 .calculator__button--longer {
