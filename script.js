@@ -78,7 +78,7 @@ function Calculator(displayNode = "not set") {
   this.displayText = "0";
   this.displayNode = displayNode;
   this.updateDisplay = function() {
-    const currentInputType = this.getLastInput();
+    const currentInputType = this.getCurrentInputType();
 
     // Decide what to display based on last input
     switch(currentInputType) {
