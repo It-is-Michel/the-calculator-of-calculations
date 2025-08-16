@@ -6,6 +6,7 @@ function Calculator(displayNode = "not set") {
 
   // Take a button as string and decide what to do
   this.pressButton = function(pressedButton) {
+    pressedButton = pressedButton.toLowerCase();
     // If the pressed button is a number or a dot, try add it to the current entry and return
     const pressedButtonIsNumber = isNaN(pressedButton) ? false : true;
     const pressedButtonIsDot = pressedButton === "." ? true : false;
