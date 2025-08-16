@@ -30,7 +30,7 @@ function Calculator(displayNode = "not set") {
         return;
 
       case "/":
-        this.div(pressedButton);
+        this.updateOperator(pressedButton);
         return;
 
       case "ce":
