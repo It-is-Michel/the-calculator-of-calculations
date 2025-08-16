@@ -25,7 +25,7 @@ function Calculator() {
         return;
 
       case "multi":
-        this.multi(pressedButton);    // IMPLEMENT DISPLAY
+        this.multi(pressedButton);
         return;
 
       case "div":
