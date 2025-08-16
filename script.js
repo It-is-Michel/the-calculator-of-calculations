@@ -111,23 +111,22 @@ function Calculator(displayNode = "not set") {
 
   // Find what was last input
   this.getCurrentInputType = function() {
-    let currentInputType = "not set";
     const operatorsRegex = /[\+\-x/]/;
-    if (this.currentEntry !== "0") {
-      currentInputType = "number";
-    } else if (operatorsRegex.test(this.currentEntry)) {
-      currentInputType = "operator";
-    } else if (this.currentEntry === this.displayText) {
-      currentInputType = "invalid input";
-    } else if (this.currentEntry.includes("Error: ")) {
-      currentInputType = "error";
-    } else if (this.currentEntry === "0") {
-      currentInputType = "number";
+
+    const isNumber = !isNaN(this.currentEntry);
+    const isDot = /\.$/.test(this.currentEntry);
+    const isOperator = operatorsRegex.test(this.currentEntry);
+    const isError = this.currentEntry.includes(/^Error: /);
+
+    if (isNumber || isDot) {
+      return "number";
+    } else if (isOperator) {
+      return "operator";
+    } else if (isError) {
+      return "error";
     } else {
-      this.displayText = "There was an error.";
-      console.warn(`Error: updateDisplay couldn't find the last input with ${this.currentEntry}.`);
+      console.warn(`getCurrentInputType didn't work with: ${this.currentEntry}`);
     };
-    return currentInputType;
   };
 
   this.updateOperator = function(newOperator) {
