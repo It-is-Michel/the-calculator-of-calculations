@@ -1,4 +1,4 @@
-function Calculator() {
+function Calculator(displayNode = "not set") {
   // Used to operate
   this.currentEntry = "0";
   this.operator = null;
@@ -72,6 +72,52 @@ function Calculator() {
     }
     this.updateDisplay();
   }
+
+  // Update display text
+  this.displayText = "Welcome!";
+  this.displayNode = displayNode;
+  this.updateDisplay = function() {
+    // Find what was last input
+    const lastInput = "not set";
+    const operatorsRegex = /[+-x\/]/;
+    if (this.currentEntry !== "0") {
+      lastInput = "number";
+    } else if (operatorsRegex.test(this.currentEntry)) {
+      lastInput = "operator";
+    } else if (this.currentEntry === this.displayText) {
+      lastInput = "invalid input";
+    } else if (this.currentEntry.contains("Error: ")) {
+      lastInput = "error";
+    } else {
+      this.displayText = "There was an error.";
+      console.warn(`Error: updateDisplay couldn't find the last input with ${this.currentEntry}.`);
+      return;
+    }
+
+    // Decide what to display based on last input
+    switch(lastInput) {
+      case "number":
+        this.displayText = currentEntry;
+        break;
+
+      case "operator":
+        this.displayText = this.operator;
+        break;
+
+      case "invalid input":
+        this.displayText = currentEntry;
+        break;
+
+      case "error":
+        this.displayText = currentEntry;
+        break;
+    }
+
+    // Update display text on the HTML if there are one
+    if (this.displayNode !== "not set") {
+      this.displayNode.textContent = this.displayText;
+    };
+  };
 
   // add method
   // subtract method
