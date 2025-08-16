@@ -1,4 +1,4 @@
-const operatorsRegex = /[+\-x\/]/;
+const operatorsRegex = /[+\-x\/\^]/;
 
 function Calculator() {
   this.memory = [];
@@ -89,7 +89,11 @@ function Calculator() {
 
     if (currentEntryIsNumber) this.saveEntry();
 
+    if (this.currentEntry === "x") {
+      this.currentEntry = "^";
+    } else {
     this.currentEntry = operator;
+    };
   };
 
   this.clearEntry = function() {
@@ -127,6 +131,10 @@ function Calculator() {
 
         case "x":
           answer = firstOperand * secondOperand;
+          break;
+
+        case "^":
+          answer = firstOperand ** secondOperand;
           break;
 
         case "/":
