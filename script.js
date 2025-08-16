@@ -1,9 +1,57 @@
 function Calculator() {
-  // press button method
+  // Used to operate
+  this.currentEntry = "0";
+  this.operator = null;
+  this.previousEntry = null;
 
-  // current entry
-  // operator
-  // previous entry
+  // Take a button as string and decide what to do
+  this.pressButton = function(pressedButton) {
+    // If the pressed button is a number or a dot, try add it to the current entry and return
+    const pressedButtonIsNumber = isNaN(pressedButton) ? false : true;
+    const pressedButtonIsDot = pressedButton === "." ? true : false;
+    if (pressedButtonIsNumber || pressedButtonIsDot) {
+      this.addToEntry(pressedButton);
+      return;
+    };
+
+    // Compare pressed button with operands and control buttons, then do the action
+    switch(pressedButton) {
+      case "sum":
+        this.sum(pressedButton);
+        return;
+
+      case "sub":
+        this.sum(pressedButton);
+        return;
+
+      case "multi":
+        this.multi(pressedButton);    // IMPLEMENT DISPLAY
+        return;
+
+      case "div":
+        this.div(pressedButton);
+        return;
+
+      case "clear entry":
+        this.clearEntry();
+        return;
+
+      case "clear all":
+        this.clearAll();
+        return;
+
+      case "equal":
+        this.calculateResult(pressedButton);
+        return;
+
+      default:
+        // If any of the buttons possibilities match, there's an error. Then, warn and return.
+        console.warn(`${pressedButton} isn't a valid input.`);
+        return;
+    };
+  }
+
+  // Add digits and dots to the current entry
 
   // add method
   // subtract method
