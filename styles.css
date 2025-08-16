@@ -180,7 +180,7 @@ body {
 .calculator__button--multiply,
 .calculator__button--add,
 .calculator__button--divide,
-.calculator__button--reduce,
+.calculator__button--subtract,
 .calculator__button--equal {
   background-color: #ffd65c;
 }
