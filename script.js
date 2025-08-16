@@ -97,19 +97,13 @@ function Calculator(displayNode = "not set") {
     // Decide what to display based on last input
     switch(lastInput) {
       case "number":
+      case "invalid input":
+      case "error":
         this.displayText = currentEntry;
         break;
 
       case "operator":
         this.displayText = this.operator;
-        break;
-
-      case "invalid input":
-        this.displayText = currentEntry;
-        break;
-
-      case "error":
-        this.displayText = currentEntry;
         break;
     }
 
