@@ -184,6 +184,7 @@ body {
 
 .footer {
   background-color: var(--secondary-color);
+  color: var(--main-color);
   height: var(--footer-height);
   padding: 0 1rem;
   display: flex;
